@@ -1,2 +1,2 @@
 # deepjoint-algo
-Source codes for the DeepJoint algorithm developed by Rakez et al. 2024
+Source codes for the DeepJoint algorithm pipeline described in https://arxiv.org/abs/2403.13488v1
