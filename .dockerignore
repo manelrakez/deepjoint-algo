@@ -1,0 +1,6 @@
+# Ignore everything
+*
+
+# Except requirements/ & docker/ folders
+!requirements/
+!docker/

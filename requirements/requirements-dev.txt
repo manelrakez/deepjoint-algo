@@ -1,0 +1,10 @@
+# formatters & linters
+ruff
+pre-commit
+pytest
+
+# jupyter notebook
+notebook
+tornado
+jupyter
+papermill
