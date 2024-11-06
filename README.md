@@ -1,6 +1,6 @@
 # The DeepJoint algorithm
 The codes for our proposed model, the "DeepJoint algorithm", which aims to quantitavely estimate mammographic density from the complete exam at each screening visit and evaluate its association with breast cancer risk over time, are provided here.
-Refer to our [paper](https://arxiv.org/abs/2403.13488v1) for more details on the model.
+Refer to our [paper](https://arxiv.org/abs/2403.13488) for more details on the model.
 
 Pytorch, R and all the other depencies are installed within the docker images `deepjoint_torch` and `deepjoint_r`. 
 You only need to have Docker Engine and Python 3 installed locally to build and run the docker images.
