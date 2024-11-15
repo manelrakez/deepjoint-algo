@@ -2,12 +2,12 @@ import numpy as np
 from pydicom import Dataset
 from datetime import datetime
 from typing import Any
-from loguru import logger
 from pydicom.multival import MultiValue
 from pydicom.pixel_data_handlers.pylibjpeg_handler import generate_frames
 import cv2
 from skimage import filters
 import scipy
+from loguru import logger
 
 
 def fmt_study_date(val: str) -> datetime:
