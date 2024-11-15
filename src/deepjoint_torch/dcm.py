@@ -1,9 +1,6 @@
-from pathlib import Path
-
 import h5py
 import numpy as np
 import pydicom.multival
-from loguru import logger
 from pydicom import Dataset, dcmread
 from typing import Any
 import re
@@ -21,6 +18,14 @@ from deepjoint_torch.dcm_utils import (
     get_flips,
     get_breast_minmax_meanstd,
 )
+from pathlib import Path
+
+import pandas as pd
+
+from tqdm.auto import tqdm
+from shutil import rmtree
+from loguru import logger
+
 
 DEFAULT_PS_PATTERN = re.compile(r"NOT_SET|[\(\[]?-1(\.0?)?[\s,]+-1(\.0?)?[\)\]]?")
 
@@ -294,3 +299,22 @@ def get_default_pixel_spacing(harmonized_manufacturer: str, image_type: str) -> 
         return 0.07, 0.07
 
     return 0.1, 0.1
+
+
+def dcm_to_h5(dicom_dir: Path, output_dir: Path) -> None:
+    if output_dir.exists():
+        rmtree(output_dir)
+    output_dir.mkdir(parents=True)
+
+    logger.info(f"{dicom_dir.as_posix() = }")
+    all_tags = []
+    for dcm_path in tqdm(dicom_dir.glob("**/*.dcm"), desc="Extract DICOMs to H5 files"):
+        # for dcm_path in tqdm(list(dicom_dir.glob("**/*.dcm"))[:5], desc="Extract DICOMs to H5 files"):
+        dcm = DCM(dcm_path)
+        tags = dcm.tag_dict()
+        h5_path = output_dir.absolute() / f"{dcm.image_uid}.h5"
+
+        all_tags.append(tags)
+        dcm.to_h5(h5_path)
+
+    pd.DataFrame(data=all_tags).to_csv(output_dir / "tags.csv", index=False, header=True)
