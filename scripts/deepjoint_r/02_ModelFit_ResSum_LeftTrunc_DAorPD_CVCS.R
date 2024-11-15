@@ -1,11 +1,14 @@
-  ###########################################################################################################
-  ###########################################################################################################
-  ######         Project: The DeepJoint algorithm: Joint Model fit results summary                     ######
-  ######         Programmer: M.RAKEZ                                                                   ######
-  ######         Creation date: Thursday, 11th of April 2024                                           ######
-  ######         Last updated: 11APR2024                                                               ######
-  ###########################################################################################################
-  ###########################################################################################################
+  ########################################################################
+  # Copyright © 2024 INSERM U1219, Therapixel SA
+  # Contributors: Manel Rakez, Julien Guillaumin
+  # All rights reserved.
+  # This file is subject to the terms and conditions described in the
+  # LICENSE file distributed in this package.
+  ########################################################################
+  
+  ####################################
+  # Project: The DeepJoint algorithm: Joint model fit results summary
+  ####################################
   
   ####################################
   # Start with a clean environment

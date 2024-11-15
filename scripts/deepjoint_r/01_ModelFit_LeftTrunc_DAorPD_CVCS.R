@@ -1,11 +1,14 @@
-  ###########################################################################################################
-  ###########################################################################################################
-  ######         Project: The DeepJoint algorithm: Joint Model fit using consensus algorithm           ######
-  ######         Programmer: M.RAKEZ                                                                   ######
-  ######         Creation date: Thursday, 11th of April 2024                                           ######
-  ######         Last updated: 11APR2024                                                               ######
-  ###########################################################################################################
-  ###########################################################################################################
+  ########################################################################
+  # Copyright © 2024 INSERM U1219, Therapixel SA
+  # Contributors: Manel Rakez, Julien Guillaumin
+  # All rights reserved.
+  # This file is subject to the terms and conditions described in the
+  # LICENSE file distributed in this package.
+  ########################################################################
+  
+  ####################################
+  # Project: The DeepJoint algorithm: Joint model fit using Monte Carlo consensus algorithm
+  ####################################
   
   ####################################
   # Start with a clean environment
@@ -65,7 +68,7 @@
   ####################################
   # Model specifications
   # Example with dense area values (sqrt_da_cm2). Just replace sqrt_da_cm2 by sqrt_pd to run model with percent density values
-  n_slices <- 12 #To adapt in accordance with the size of your data (see Afonso et al., arXiv:2310.03351)
+  n_slices <- 12 #To adapt given the size of your data (see Miranda Afonso et al., arXiv:2310.03351)
   n_chains <- 3
   n_iter <- 8500L
   n_burnin <- 3500L

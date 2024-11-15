@@ -1,3 +1,9 @@
+# Copyright © 2024 INSERM U1219, Therapixel SA
+# Contributors: Manel Rakez, Julien Guillaumin
+# All rights reserved.
+# This file is subject to the terms and conditions described in the
+# LICENSE file distributed in this package.
+
 """The reader module defines methods and classes that can be used to read H5 file
 data in a friendly and predictable way.
 """
