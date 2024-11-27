@@ -1,13 +1,15 @@
-  ###########################################################################################################
-  ###########################################################################################################
-  ######         Project: The DeepJoint algorithm: Joint Model fit using consensus algorithm           ######
-  ######                  on a subset of 2501 women (test data)                                        ######
-  ######                  NB: Results are solely for illustration purposes                             ######
-  ######         Programmer: M.RAKEZ                                                                   ######
-  ######         Creation date: Wednesday, 23rd of October 2024                                        ######
-  ######         Last updated: 30OCT2024                                                               ######
-  ###########################################################################################################
-  ###########################################################################################################
+  ########################################################################
+  # Copyright © 2024 INSERM U1219, Therapixel SA
+  # Contributors: Manel Rakez, Julien Guillaumin
+  # All rights reserved.
+  # This file is subject to the terms and conditions described in the
+  # LICENSE file distributed in this package.
+  ########################################################################
+  
+  ####################################
+  # Project: The DeepJoint algorithm: Joint Model fit using consensus algorithm on a subset of 2501 women (test data)
+  # NB: Results are solely for illustration purposes
+  ####################################
   
   ####################################
   # Start with a clean environment

@@ -1,3 +1,8 @@
+# Copyright © 2024 INSERM U1219, Therapixel SA
+# Contributors: Manel Rakez, Julien Guillaumin
+# All rights reserved.
+# This file is subject to the terms and conditions described in the
+# LICENSE file distributed in this package.
 FROM pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
 
 # to silent warning from pip

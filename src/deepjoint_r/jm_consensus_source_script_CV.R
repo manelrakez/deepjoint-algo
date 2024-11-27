@@ -1,12 +1,15 @@
-  ###########################################################################################################
-  ###########################################################################################################
-  ######         Project: The DeepJoint algorithm                                                      ######
-  ######                  Source script for the JM consensus method and other functions                ######
-  ######         Programmer: from Afonso et al. 2023, readapted by M. RAKEZ                            ######
-  ######         Creation date: Thursday, 11th of April 2024                                           ######
-  ######         Last updated: 11APR2024                                                               ######
-  ###########################################################################################################
-  ###########################################################################################################
+  ########################################################################
+  # Copyright © 2024 INSERM U1219, Therapixel SA
+  # Contributors: Manel Rakez, Julien Guillaumin
+  # All rights reserved.
+  # This file is subject to the terms and conditions described in the
+  # LICENSE file distributed in this package.
+  ########################################################################
+  
+  ####################################
+  # Project: The DeepJoint algorithm: Source script for the JM consensus method and other functions
+  # Source code adapted by M. RAKEZ from Miranda Afonso et al (2023)
+  ####################################
   
   ####################################
   # Packages:

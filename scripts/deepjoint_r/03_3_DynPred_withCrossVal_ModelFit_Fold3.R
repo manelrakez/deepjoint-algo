@@ -1,15 +1,17 @@
-  ###########################################################################################################
-  ###########################################################################################################
-  ######         Project: The DeepJoint algorithm: Breast cancer risk prediction (with cross-val)      ######
-  ######                  Part 1-3 : Fit the joint model to data from the 3rd fold using jm_consensus  ######
-  ######                  NB: Use this code to decompose the cross-validation process                  ######
-  ######                   when the dataset size is too big (>= 10k subjects)                          ######
-  ######         Programmer: M.RAKEZ                                                                   ######
-  ######         Creation date: Thursday, 11th of April 2024                                           ######
-  ######         Last updated: 11APR2024                                                               ######
-  ###########################################################################################################
-  ###########################################################################################################
+  ########################################################################
+  # Copyright © 2024 INSERM U1219, Therapixel SA
+  # Contributors: Manel Rakez, Julien Guillaumin
+  # All rights reserved.
+  # This file is subject to the terms and conditions described in the
+  # LICENSE file distributed in this package.
+  ########################################################################
   
+  ####################################
+  # Project: The DeepJoint algorithm: Breast cancer risk prediction (with cross-val)
+  # Part 1-3 : Fit the joint model to data from the 3rd fold using jm_consensus
+  # NB: Use this code to decompose the cross-validation process when the dataset size is too big (>= 10k subjects) 
+  ####################################
+
   ####################################
   # Start with a clean environment
   rm(list=ls(all=TRUE))

@@ -1,13 +1,16 @@
-  ###########################################################################################################
-  ###########################################################################################################
-  ######         Project: The DeepJoint algorithm: Breast cancer risk prediction (with cross-val)      ######
-  ######                  Part 2 : Compute risk propabilities in the test set of each fold             ######
-  ######         Programmer: M.RAKEZ                                                                   ######
-  ######         Creation date: Thursday, 11th of April 2024                                           ######
-  ######         Last updated: 11APR2024                                                               ######
-  ###########################################################################################################
-  ###########################################################################################################
-
+  ########################################################################
+  # Copyright © 2024 INSERM U1219, Therapixel SA
+  # Contributors: Manel Rakez, Julien Guillaumin
+  # All rights reserved.
+  # This file is subject to the terms and conditions described in the
+  # LICENSE file distributed in this package.
+  ########################################################################
+  
+  ####################################
+  # Project: The DeepJoint algorithm: Breast cancer risk prediction (with cross-val)
+  # Part 2 : Compute risk probabilities in the test set of each fold
+  ####################################
+  
   ####################################
   # Start with a clean environment
   rm(list=ls(all=TRUE))
