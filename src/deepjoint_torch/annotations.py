@@ -21,25 +21,34 @@ BREAST_LABEL = 0
 DENSE_LABEL = 4
 
 
-def load_annotations(file_path: str | Path) -> pd.DataFrame:
+def load_annotations(file_path: str | Path, remove_images_without_annots:bool=True) -> pd.DataFrame:
+    """
+    CSV with columns ['image_uid', 'polygons']
+    polygons : plain string with format '[{"type":"<INT>", "point_list":[[x,y], [x,y], ...]}, {...}]"
+        List of dict with keys 'type' & 'point_list'
+    """
     df = pd.read_csv(file_path)
-
-    df["image_uid"] = df["fp"].apply(lambda x: os.path.splitext(os.path.basename(x))[0])
-    df["polygons"] = df["polygons"].str.replace("label", "type").str.replace("polygon", "point_list")
-    df.rename(columns={"fp": "hdf5_path"}, inplace=True)
+    # CSV with columns
 
     # Don't keep empty annotations
     image_uids_without_annot = df[df["polygons"] == "[]"]["image_uid"].unique().tolist()
-    if len(image_uids_without_annot) > 1:
+    if remove_images_without_annots and len(image_uids_without_annot) > 1:
         logger.warning(
             f"{len(image_uids_without_annot):_} images don't have annotations and will not be processed"
         )
         df = df[~df["image_uid"].isin(image_uids_without_annot)]
 
-    logger.success(f"A total of {len(df):_} images have annotations")
-    columns_to_keep = ["image_uid", "hdf5_path", "polygons"]
+    # convert plain 'string' as list of dict (as described above)
+    df["polygons"] = df["polygons"].apply(json.loads)
 
-    return df[columns_to_keep]
+    logger.success(f"A total of {len(df):_} images have annotations")
+    columns_to_keep = ["image_uid", "polygons"]
+
+    df = df[columns_to_keep].copy()
+    df.set_index("image_uid", inplace=True, drop=False)
+    df.index.name = None
+
+    return df
 
 
 def get_masks_from_polygons(

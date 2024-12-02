@@ -4,10 +4,8 @@
 # This file is subject to the terms and conditions described in the
 # LICENSE file distributed in this package.
 
-import json
-
 from copy import deepcopy
-from typing import Tuple
+from typing import Tuple, Any
 
 import numpy as np
 import pandas as pd
@@ -136,8 +134,8 @@ class Dataset(data.Dataset):
         return image_uid, image, breast_mask, dense_mask
 
 
-def infer_with_masks(polygons: str) -> Tuple[bool, bool]:
-    polygons = json.loads(polygons)
+def infer_with_masks(polygons: dict[str, Any]) -> Tuple[bool, bool]:
+    # polygons = json.loads(polygons)
     with_breast_mask, with_dense_mask = False, False
 
     for polygon in polygons:

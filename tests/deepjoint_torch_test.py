@@ -41,3 +41,14 @@ def test_infer(tmp_path: Path) -> None:
         checkpoint=BEST_CHECKPOINT,
         eval_model=False
     )
+
+
+def test_infer_with_eval(tmp_path: Path) -> None:
+    """Test that the inference pipeline is working on test data"""
+    infer(
+        output_dir=tmp_path,
+        h5_dir=TEST_DATA_DIR / "deepjoint_torch" / "h5_dir",
+        checkpoint=BEST_CHECKPOINT,
+        annotations=TEST_DATA_DIR / "deepjoint_torch" / "annotations.csv",
+        eval_model=True
+    )
