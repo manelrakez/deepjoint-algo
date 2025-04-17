@@ -20,3 +20,10 @@ tqdm
 pylibjpeg
 pylibjpeg-openjpeg
 pylibjpeg-rle
+
+# Annotation tool :
+pydantic
+colorlover
+dash
+dash_bootstrap_components
+plotly

@@ -19,6 +19,11 @@ def transforms(sample: DataSample) -> DataSample:
     sample = apply_breast_masking(sample, background_value=0.0)
     return sample
 
+def annotation_transforms(sample: DataSample) -> DataSample:
+    sample = apply_voilut(sample)
+    sample = apply_breast_masking(sample, background_value=0.0)
+    return sample
+
 
 def apply_photometric_interpretation(sample: DataSample) -> DataSample:
     if sample.photometric_interpretation == "MONOCHROME1":
